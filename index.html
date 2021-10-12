@@ -372,7 +372,7 @@ EX7) Write a selector to target all the li into the first ordered-list in the si
 
                 <nav class="blog-pagination">
                     <a class="btn btn-outline-primary" href="#">Older</a>
-                    <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+                    <a onclick="addBlog()" class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
                 </nav>
             </div>
             <!-- /.blog-main -->
@@ -433,38 +433,86 @@ EX7) Write a selector to target all the li into the first ordered-list in the si
 
     <script>
         /*
-          JS Exercises
-         
-          EX14) Write a function to remove all the links under "Elsewhere"
-          EX15) Write a function to change the column size for heading in jumbotron
-          EX16) Write a function to remove the "Search" magnifying glass icon
-          EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
-          EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
-          EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
+          JS Exercises        
       */
 //      EX11) Write a function to add a new link into the navbar
 const newLink=function(){
 
+
 }
 //          EX12) Write a function to change the color of the main title
 let changeColor=function(){
-    let title=document.querySelector("title")
-    title.style.backgroundColor="blue"
+    let title=document.querySelector(".display-4")
+    title.style.color="yellow"
 }
 changeColor()
 // EX13) Write a function to change the background of the jumbotron
 
 let changeColorJumbotron=function(){
-    let title=document.getElementsByClassName("jumbotron")
+    let title=document.querySelector(".jumbotron h1")
     title.style.backgroundColor="blue"
 }
 changeColorJumbotron()
 
-//         EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
-function getAlert(heading) {
-  alert('Here\'s an alert!')
+//EX14) Write a function to remove all the links under "Elsewhere"
+let removeLink=function(){
+    let link=document.querySelector(".blog-sidebar > div:last-of-type ol ") 
+        link.innerHTML="";   
 }
+  // removeLink()
 
+//          EX15) Write a function to change the column size for heading in jumbotron
+let changeColunmSize=function(){
+    let colSize=document.getElementsByClassName("jumbotron >div>h1")
+    
+    
+}
+changeColunmSize()
+ //EX16) Write a function to remove the "Search" magnifying glass icon
+ const removeIcon=function(){
+     let icon=document.querySelector(".blog-header .row div:last-of-type")
+     icon.innerHTML=""
+ }
+ //removeIcon()
+
+// EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
+const trimCharecters=function(){
+let trim=document.querySelectorAll(" .blog-post p:nth-child(3)")
+   for(let i=0;i<trim.length;i++){
+       let remove=trim[i]
+       remove.innerText=remove.innerText.substring(150)
+    }
+}
+//trimCharecters();
+// EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
+
+const addBlog=function(){
+    let add =document.createElement(" div h2")
+    
+}
+//          EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
+const removeBlog=function(){
+    let removeBlog=document.querySelectorAll(".blog-pagination a:first-child-of")
+    removeBlog.removeAttribute("href")
+    removeBlog.addEventListener("click",function(){
+    const blogs=document.querySelectorAll(".blog-post")
+    blogs[blogs.length-1].remove();
+})
+}
+removeBlog()
+
+//         EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
+function getAlert() {
+let author=document.querySelectorAll(".blog-post h2+p > a")
+for(let i=0; i<author.length;i++){
+    let auth=author[i]
+    auth.addEventListener("mouseenter",function(e){
+      
+    alert(e.target.innerText)  
+    })
+}
+}
+getAlert()
 
     </script>
 </body>
