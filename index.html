@@ -21,8 +21,7 @@
             
             
             
-            EX8) Write a selector to target the second post author
-            EX9) Write a selector to target the "back to top" link  
+            
             #### EXTRA Try doing it without targeting the footer element directly
             EX10) Write a selector to target the footer
         */
@@ -51,16 +50,24 @@ color:greenyellow !important ;
 }
 /*EX6) Write a selector to target the last blog post*/
 .blog-post :last-of-type{
-    background-color: indigo !important;
+    background-color: rgb(175, 231, 110) !important;
 }
 /* 
 EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives )
  */
- .list-unstyled:first-of-type li * {
-            color: orangered;
-        }
+ 
+        .list-unstyled.mb-0 li *{
+                color: orangered;
+            }
 
-        
+/* EX8) Write a selector to target the second post author*/
+main .blog-post:nth-of-type(2n) .blog-post-meta a {
+            color: rgb(247, 7, 207);
+        }       
+/*            EX9) Write a selector to target the "back to top" link  
+*/
+
+
     </style>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
