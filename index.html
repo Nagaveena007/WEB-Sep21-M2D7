@@ -434,7 +434,6 @@ EX7) Write a selector to target all the li into the first ordered-list in the si
     <script>
         /*
           JS Exercises
-          EX12) Write a function to change the color of the main title
           EX13) Write a function to change the background of the jumbotron
           EX14) Write a function to remove all the links under "Elsewhere"
           EX15) Write a function to change the column size for heading in jumbotron
@@ -445,9 +444,13 @@ EX7) Write a selector to target all the li into the first ordered-list in the si
       */
 //      EX11) Write a function to add a new link into the navbar
 const newLink=function(){
-    
-}
 
+}
+//          EX12) Write a function to change the color of the main title
+let changeColor=function(){
+    let title=document.querySelector("title")
+    title.style.backgroundColor="blue"
+}
 
 //         EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
 function getAlert(heading) {
