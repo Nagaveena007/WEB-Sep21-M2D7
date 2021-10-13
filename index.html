@@ -436,10 +436,12 @@ EX7) Write a selector to target all the li into the first ordered-list in the si
           JS Exercises        
       */
 //      EX11) Write a function to add a new link into the navbar
-const newLink=function(){
-
-
-}
+const newLink = function(content) {
+const parent=document.querySelector(".nav");
+const a = `<a class="p-2 text-muted" href="#">${content}</a> `;
+parent.innerHTML+=a;
+};
+newLink("newLink");
 //          EX12) Write a function to change the color of the main title
 let changeColor=function(){
     let title=document.querySelector(".display-4")
@@ -460,12 +462,15 @@ let removeLink=function(){
         link.innerHTML="";   
 }
   // removeLink()
+ 
+
 
 //          EX15) Write a function to change the column size for heading in jumbotron
 let changeColunmSize=function(){
-    let colSize=document.getElementsByClassName("jumbotron >div>h1")
-    
-    
+    let colSize=document.querySelectorAll(".jumbotron + div .col-md-6")
+    colSize=forEach((col) => {
+       col.className="col-md-4";
+    });
 }
 changeColunmSize()
  //EX16) Write a function to remove the "Search" magnifying glass icon
